@@ -19,7 +19,7 @@ Cukup.css adalah kerangka kerja (*framework*) CSS yang mengutamakan kesederhanaa
 Cukup sisipkan satu baris kode berikut ke bagian `<head>` pada file HTML Anda:
 
 ```html
-<link rel="stylesheet" type="text/css" href="{link cdn}">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/versimalik/cukupcss@v0.1/css/cukup.css">
 ```
 
 ## Prinsip Desain
@@ -84,8 +84,7 @@ Untuk mempercepat pekerjaan, tersedia beberapa class bantuan (utilitas):
 ## Melihat Demo
 
 Penasaran dengan hasilnya? Anda bisa langsung melihat demonstrasi Cukup.css di:
-
-**[versimalik.com/produk/cukupcss/demo](https://versimalik.com/produk/cukupcss/demo)**
+https://versimalik.com/produk/cukupcss/demo (sedang dalam pengembangan)
 
 ## Cara Kustomisasi
 
