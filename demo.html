@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUKUP — Sistem Desain</title>
+<link rel="stylesheet" href="css/cukup.css">
+<style>
+.demo-box {
+  border: 1px solid var(--border);
+  background: var(--disabled-bg);
+  padding: 14px;
+  text-align: center;
+}
+.demo-panel {
+  border: 1px solid var(--border);
+  padding: 14px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Navigasi utama" style="position: sticky; top: 0; z-index: 100; background-color: var(--white);">
+    <ul>
+      <li><strong><a href="#top">CUKUP&reg;</a></strong></li>
+    </ul>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger">Menu</label>
+    <ul>
+      <li><a href="#tipografi">Tipografi</a></li>
+      <li><a href="#daftar">Daftar</a></li>
+      <li><a href="#tabel">Tabel</a></li>
+      <li><a href="#form">Form</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#article">Article</a></li>
+      <li><a href="#grid">Grid</a></li>
+      <li><a href="#tombol">Tombol</a></li>
+      <li><a href="#card">Card</a></li>
+      <li><a href="#komponen">Komponen</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+
+
+  <section id="tipografi">
+    <span class="label">01 — Tipografi &amp; Elemen Inline (semantik, tanpa class)</span>
+
+    <h1>Judul h1 — Hierarki</h1>
+    <h2>Judul h2 — Bagian</h2>
+    <h3>Judul h3 — Sub-bagian</h3>
+    <h4>Judul h4 — Kecil</h4>
+    <h5>Judul h5 — Label</h5>
+    <h6>Judul h6 — Overline</h6>
+
+    <hr>
+
+    <p>Paragraf berisi <strong>teks tebal</strong>, <em>teks miring</em>, <s>teks coret</s>,
+    <mark>teks disorot</mark>, <small>teks kecil</small>, <abbr title="HyperText Markup Language">HTML</abbr>,
+    pintasan <kbd>Ctrl</kbd> + <kbd>S</kbd>, kode inline <code>const x = 1;</code>,
+    H<sub>2</sub>O dan x<sup>2</sup>.</p>
+
+    <p>Tautan biasa: kunjungi <a href="#top">halaman ini</a> untuk contoh gaya tautan.</p>
+
+    <blockquote>
+      Desain yang baik terlihat jelas; desain yang hebat tidak terlihat.
+      <footer>&mdash; prinsip minimalisme Swiss</footer>
+    </blockquote>
+
+    <pre><code>&lt;div class="row"&gt;
+  &lt;div class="col-md-6"&gt;Konten&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <hr>
+
+
+  <section id="daftar">
+    <span class="label">02 — Daftar (semantik, tanpa class)</span>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <h5>Tak berurut</h5>
+        <ul>
+          <li>Konsep
+            <ul><li>Riset</li><li>Sketsa</li></ul>
+          </li>
+          <li>Produksi</li>
+          <li>Rilis</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5>Berurut</h5>
+        <ol>
+          <li>Brief</li>
+          <li>Desain</li>
+          <li>Uji coba</li>
+        </ol>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5>Definisi</h5>
+        <dl>
+          <dt>Grid</dt><dd>Kerangka kolom halaman.</dd>
+          <dt>Gutter</dt><dd>Jarak antar kolom.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+
+  <section id="tabel">
+    <span class="label">03 — Tabel (semantik, tanpa class)</span>
+    <table>
+      <caption>Tabel 1 — contoh data proyek</caption>
+      <thead>
+        <tr><th>Proyek</th><th>Kategori</th><th>Tahun</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Monokrom</td><td>Identitas</td><td>2026</td><td>Selesai</td></tr>
+        <tr><td>Nol Derajat</td><td>Kemasan</td><td>2025</td><td>Berjalan</td></tr>
+        <tr><td>Garis Rambut</td><td>Tipografi</td><td>2024</td><td>Selesai</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr>
+
+
+  <section id="form">
+    <span class="label">04 — Form (semantik, tanpa class)</span>
+    <form class="row">
+      <div class="col-12 col-md-6">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" placeholder="Nama lengkap">
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="nama@email.com">
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="kota">Kota</label>
+        <select id="kota">
+          <option>Jakarta</option><option>Bandung</option><option>Surabaya</option>
+        </select>
+      </div>
+      <div class="col-12 col-md-6">
+        <label for="tgl">Tanggal</label>
+        <input type="date" id="tgl">
+      </div>
+      <div class="col-12">
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" placeholder="Tulis pesan..."></textarea>
+      </div>
+      <div class="col-12">
+        <fieldset>
+          <legend>Paket</legend>
+          <label><input type="radio" name="paket" checked> Dasar</label>
+          <label><input type="radio" name="paket"> Lengkap</label>
+          <label><input type="checkbox"> Kirim salinan via email</label>
+          <label>Volume: <input type="range"></label>
+          <label>Lampiran: <input type="file"></label>
+        </fieldset>
+      </div>
+      <div class="col-12">
+        <label>Nonaktif</label>
+        <input type="text" value="tidak bisa diedit" disabled>
+      </div>
+    </form>
+  </section>
+
+  <hr>
+
+
+  <section id="media">
+    <span class="label">05 — Media, Detail &amp; Progres (semantik, tanpa class)</span>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <figure>
+          <img src="https://picsum.photos/seed/cukup/640/360.jpg" alt="Contoh gambar grayscale otomatis">
+          <figcaption>Gambar 1 — semua foto dibuat hitam-putih oleh sistem.</figcaption>
+        </figure>
+      </div>
+      <div class="col-12 col-md-6">
+        <details>
+          <summary>Apa itu sistem desain?</summary>
+          <p>Kumpulan aturan visual yang menjaga konsistensi seluruh halaman.</p>
+        </details>
+        <details open>
+          <summary>Mengapa monokrom?</summary>
+          <p>Karena hierarki harus lahir dari tipografi dan ruang, bukan warna.</p>
+        </details>
+        <label>Progres pengerjaan</label>
+        <progress value="70" max="100"></progress>
+        <address>Jl. Minimalis No. 1, Jakarta<br>hello@cukup.design</address>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+
+  <section id="article">
+    <span class="label">06 — Article (semantik — tag <code>&lt;article&gt;</code>)</span>
+    <article>
+      <h3>Judul bagian artikel</h3>
+      <p>Paragraf pembuka yang menjelaskan isi artikel secara ringkas. Di dalam tag <code>&lt;article&gt;</code>, jarak antar elemen diatur otomatis (<code>&gt; * + *</code>), jadi penulis cukup menulis
+      heading, paragraf, kutipan, dan gambar tanpa memikirkan margin.</p>
+      <blockquote>Kutipan panjang dalam artikel menonjol dengan garis kiri yang tegas.
+        <footer>&mdash; gaya blok kutipan</footer>
+      </blockquote>
+      <p>Paragraf lanjutan dengan <mark>teks sorot</mark>, tautan <a href="#top">menuju atas</a>,
+      dan H<sub>2</sub>O atau x<sup>2</sup> yang tetap rapi di alur baca.</p>
+    </article>
+  </section>
+
+  <hr>
+
+
+  <section id="grid">
+    <span class="label">07 — Grid Layout (class ala Bootstrap, 12 kolom)</span>
+
+    <p><code>.col-6</code> tetap di semua layar &middot;
+    <code>.col-md-*</code> aktif mulai tablet &middot;
+    <code>.col-lg-*</code> mulai laptop. Coba kecilkan browser.</p>
+
+    <div class="row">
+      <div class="col-12"><div class="demo-box">col-12 (penuh)</div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-md-8"><div class="demo-box">col-12 / col-md-8</div></div>
+      <div class="col-12 col-md-4"><div class="demo-box">col-12 / col-md-4</div></div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 col-md-3"><div class="demo-box">col-6 / col-md-3</div></div>
+      <div class="col-6 col-md-3"><div class="demo-box">col-6 / col-md-3</div></div>
+      <div class="col-6 col-md-3"><div class="demo-box">col-6 / col-md-3</div></div>
+      <div class="col-6 col-md-3"><div class="demo-box">col-6 / col-md-3</div></div>
+    </div>
+
+    <h4>Grid bertingkat (nested)</h4>
+    <div class="row">
+      <div class="col-12 col-lg-6 demo-panel">
+        <div class="demo-box">induk col-lg-6</div>
+        <div class="row mt-2">
+          <div class="col-6"><div class="demo-box">anak 6</div></div>
+          <div class="col-6"><div class="demo-box">anak 6</div></div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 demo-panel">
+        <div class="demo-box">induk col-lg-6</div>
+        <div class="row mt-2">
+          <div class="col-4"><div class="demo-box">4</div></div>
+          <div class="col-4"><div class="demo-box">4</div></div>
+          <div class="col-4"><div class="demo-box">4</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+
+  <section id="tombol">
+    <span class="label">08 — Tombol (class .btn*)</span>
+    <button type="button">Primer</button>
+    <button type="button" class="btn-secondary">Secondary</button>
+    <button type="button" class="btn-outline">Outline</button>
+    <button type="button" disabled>Nonaktif</button>
+    <a href="#" class="btn btn-sm">Tautan btn-sm</a>
+    <a href="#" class="btn btn-outline btn-lg">btn-outline btn-lg</a>
+    <a href="#" role="button">Tautan role button</a>
+  </section>
+
+  <hr>
+
+
+  <section id="card">
+    <span class="label">09 — Card (komponen .card)</span>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <span class="badge">Identitas</span>
+          <h4 class="card-title">Monokrom</h4>
+          <p>Identitas visual hitam-putih untuk studio CUKUP.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <span class="badge badge-secondary">Draf</span>
+          <h4 class="card-title">Nol Derajat</h4>
+          <p>Kemasan grid 12 kolom, selesai pertengahan 2025.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <span class="badge">Tipografi</span>
+          <h4 class="card-title">Garis Rambut</h4>
+          <p>Studi hierarki tipografi tanpa ornamen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+
+  <section id="komponen" style="margin-bottom: 30px;">
+    <span class="label">10 — Badge, Breadcrumb, Tooltip, Tabs, Alert &amp; Dialog (komponen)</span>
+
+    <h5>Badge</h5>
+    <p>
+      <span class="badge">Baru</span>
+      <span class="badge badge-secondary">Arsip</span>
+      <span class="badge badge-outline">Draf</span>
+      <span class="badge badge-muted">Draft lama</span>
+      <span class="badge">Selesai</span>
+    </p>
+
+    <h5>Breadcrumb</h5>
+    <nav aria-label="Breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Proyek</a></li>
+        <li aria-current="page">Monokrom</li>
+      </ol>
+    </nav>
+
+    <h5>Tooltip</h5>
+    <p>Arahkan kursor ke <span class="tip" data-tip="Contoh keterangan" tabindex="0">kata ini</span> untuk melihat tooltip.</p>
+
+    <h5>Tabs</h5>
+    <div class="tabs">
+      <input type="radio" name="tab-demo" id="t1" checked>
+      <label for="t1">Ringkas</label>
+      <div class="tab-konten">
+        <p>Tampilan ringkas: satu paragraf utama saja.</p>
+      </div>
+      <input type="radio" name="tab-demo" id="t2">
+      <label for="t2">Rinci</label>
+      <div class="tab-konten">
+        <p>Tampilan rinci: paragraf tambahan dengan <a href="#">tautan lanjutan</a>.</p>
+      </div>
+    </div>
+
+      <h5>Alert</h5>
+    <div class="alert"><strong>Primary</strong> Contoh di halaman ini hanya untuk dokumentasi.</div>
+    <div class="alert alert-secondary"><strong>Secondary</strong> Pesan pelengkap biasa.</div>
+    <div class="alert alert-outline"><strong>Outline</strong> Aksi ini tidak bisa dibatalkan.</div>
+
+      <h5>Dialog</h5>
+      <button type="button" onclick="document.getElementById('dlg').showModal()">Buka dialog</button>
+      <dialog id="dlg">
+        <h4 class="mb-1">Hapus proyek?</h4>
+        <p>Tindakan ini tidak bisa dibatalkan.</p>
+        <button type="button" onclick="document.getElementById('dlg').close()">Batal</button>
+        <button type="button" class="btn-outline" onclick="document.getElementById('dlg').close()">Ya, hapus</button>
+      </dialog>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span>&copy; 2026 CUKUP v1.2</span>
+    <span>Cukup. Dan itu sudah bagus.</span>
+  </div>
+</footer>
+
+</body>
+</html>
