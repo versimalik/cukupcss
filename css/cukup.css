@@ -282,8 +282,8 @@ progress, meter { width: 100%; accent-color: var(--primary); margin-bottom: var(
 /* ---------- 06. KOMPONEN ----------
    Komponen ber-class untuk kebutuhan yang lebih spesifik. */
 
-/* navbar — satu <nav> berisi dua <ul> (brand + menu),
-   sticky default, dropdown mobile tanpa JS.
+/* navbar — satu <nav> berisi dua <ul> (brand kiri + menu kanan),
+   sticky default, menu horizontal.
    Tidak membawa margin-bottom agar header tetap simetris. */
 nav:has(> ul) {
   position: sticky;
@@ -305,55 +305,80 @@ nav > ul {
 }
 nav > ul:first-child {
   flex: 0 0 auto;
-  gap: 0;
   margin-right: auto;
 }
 nav > ul:first-child a {
   font-weight: 700;
   text-decoration: none;
 }
-.nav-toggle { display: none; }
-.nav-burger {
-  display: none;
+nav > ul li { flex: 0 0 auto; margin: 0; }
+nav > ul a { text-decoration: none; white-space: nowrap; }
+nav > ul a:hover { text-decoration: underline; }
+nav > ul li:has(details.dropdown) {
+  height: 1.5rem;
+  line-height: 1.5rem;
+}
+nav details.dropdown {
+  display: block;
+  line-height: 1.5rem;
+}
+nav details.dropdown summary {
+  display: block;
+  padding: 0 8px;
   margin: 0;
-  border: 1px solid var(--primary);
+  line-height: 1.5rem;
+}
+
+/* dropdown — komponen tiruan Pico (details.dropdown).
+   Terbuka via CSS murni (details[open]), daftar absolute di bawah summary.
+   Bisa ditaruh di dalam <li> navbar atau di mana saja. */
+details.dropdown { position: relative; display: inline-block; }
+details.dropdown summary {
+  display: inline-block;
   padding: 6px 12px;
   font-weight: 700;
   cursor: pointer;
+  list-style: none;
+  user-select: none;
+  white-space: nowrap;
 }
-nav > ul:last-child {
-  flex: 0 1 auto;
-  min-width: 0;
-  margin-left: 30px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  scrollbar-width: none;
+details.dropdown summary::-webkit-details-marker { display: none; }
+details.dropdown summary:hover { background: var(--disabled-bg); }
+details.dropdown[open] > summary::before {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background: none;
+  content: "";
+  cursor: default;
 }
-nav > ul:last-child::-webkit-scrollbar { display: none; }
-nav > ul:last-child li { flex: 0 0 auto; }
-nav > ul:last-child a { text-decoration: none; white-space: nowrap; }
-nav > ul:last-child a:hover { text-decoration: underline; }
-
-@media (max-width: 767.98px) {
-  .nav-burger { display: block; margin-left: auto; }
-  nav > ul:last-child {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    gap: 0;
-    margin-left: 0;
-    overflow: visible;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 8px 0;
-  }
-  nav > ul:last-child li { flex: 1 1 auto; }
-  nav > ul:last-child a { display: block; padding: 10px 24px; }
-  .nav-toggle:checked ~ ul:last-child { display: flex; }
+details.dropdown > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 99;
+  min-width: 180px;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  margin-top: 8px;
+  padding: 4px 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(17,24,39,.12);
 }
+details.dropdown[open] > ul { display: block; }
+details.dropdown > ul li { margin: 0; }
+details.dropdown > ul a {
+  display: block;
+  padding: 6px 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+details.dropdown > ul a:hover { background: var(--disabled-bg); }
 
 /* owl selector — elemen berurutan otomatis berjarak */
 article > * + * { margin-top: var(--space-3); }

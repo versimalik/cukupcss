@@ -69,10 +69,11 @@ Jika butuh variasi, tambahkan class berikut pada kode HTML:
 | **Label (Badge)** | `.badge`, `.badge-outline`, `.badge-secondary`, `.badge-muted` | Label teks kecil bersudut untuk status atau kategori. |
 | **Tab Menu** | `.tabs` | Menu tab interaktif yang bisa ditekan tanpa bantuan JavaScript. |
 | **Pesan (Alert)** | `.alert`, `.alert-secondary`, `.alert-outline` | Kotak peringatan atau informasi penting. |
+| **Menu Tarik (Dropdown)** | `details.dropdown` | Menu yang bisa dibuka/tutup tanpa JavaScript; daftar muncul di bawah tombol. Cocok ditaruh di dalam item navigasi. |
 
 ### 3. Navigasi (Navbar)
 
-Anda bisa membuat menu navigasi di bagian atas website yang otomatis lengket (*sticky*) dan punya *dropdown* di HP tanpa JavaScript. Cukup gunakan struktur `<nav>` yang berisi dua daftar `<ul>`.
+Anda bisa membuat menu navigasi di bagian atas website yang otomatis lengket (*sticky*) tanpa JavaScript. Cukup gunakan struktur `<nav>` berisi satu daftar `<ul>`. Menu tampil mendatar (*horizontal*); saat item terlalu banyak, menu bisa digulir ke samping. Anda bebas menentukan isinya — cukup *list* biasa, atau selipkan komponen *dropdown* di salah satu item.
 
 ## Utilitas Tambahan
 
