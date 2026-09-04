@@ -59,6 +59,7 @@ body > header,
 body > main,
 body > footer {
   padding-block: var(--space-5);
+  padding-inline: var(--space-4);
 }
 
 img, video, canvas { display: block; max-width: 100%; height: auto; }
@@ -155,8 +156,9 @@ pre {
   overflow-x: auto;
   line-height: 1.5;
   margin-bottom: var(--space-3);
+  background-color: var(--disabled-bg);
 }
-pre code { border: none; padding: 0; }
+pre code { border: none; padding: 0;}
 
 hr { border: none; border-top: 1px solid var(--border); margin: var(--space-5) 0; }
 
@@ -228,7 +230,11 @@ input:disabled, select:disabled, textarea:disabled {
   border-color: var(--border);
   cursor: not-allowed;
 }
-button:disabled {
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled,
+input[type="reset"]:disabled {
   background: var(--disabled-bg);
   color: var(--disabled-text);
   border-color: var(--border);
@@ -243,10 +249,21 @@ input[type="file"]::file-selector-button {
   padding: 8px 14px;
   margin-right: 12px;
   cursor: pointer;
+  transition: background .15s;
+}
+input[type="file"]::file-selector-button:hover {
+  background: var(--disabled-bg);
+}
+input[type="file"]:disabled::file-selector-button {
+  background: var(--disabled-bg);
+  color: var(--disabled-text);
+  border-color: var(--border);
+  cursor: not-allowed;
 }
 
 /* tombol */
-button, .btn, a[role="button"] {
+button, .btn, a[role="button"],
+input[type="submit"], input[type="button"], input[type="reset"]{
   display: inline-block;
   background: var(--primary);
   color: var(--white);
@@ -257,9 +274,14 @@ button, .btn, a[role="button"] {
 }
 
 a.btn, a[role="button"] { text-decoration: none; }
-.btn-outline, button.btn-outline, a[role="button"].btn-outline { background: var(--white); color: var(--primary); }
+.btn-outline, button.btn-outline, a[role="button"].btn-outline, input[type="reset"] { background: var(--white); color: var(--primary); }
 .btn-secondary, button.btn-secondary, a[role="button"].btn-secondary { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
-button:hover:not(:disabled), .btn:hover, a[role="button"]:hover { opacity: .75; }
+button:hover:not(:disabled), .btn:hover, a[role="button"]:hover, input[type="submit"]:hover:not(:disabled), input[type="button"]:hover:not(:disabled), input[type="reset"]:hover { opacity: .75; }
+/* outline butuh efek hover sendiri, karena opacity tidak terlihat di atas background putih */
+.btn-outline:hover, button.btn-outline:hover, a[role="button"].btn-outline:hover, input[type="reset"]:hover {
+  opacity: 1;
+  background: var(--disabled-bg);
+}
 .btn-sm { padding: 6px 14px; font-size: .75rem; }
 .btn-lg { padding: 16px 36px; }
 
@@ -352,9 +374,10 @@ details.dropdown summary {
   list-style: none;
   user-select: none;
   white-space: nowrap;
+  background: var(--disabled-bg);
 }
 details.dropdown summary::-webkit-details-marker { display: none; }
-details.dropdown summary:hover { background: var(--disabled-bg); }
+details.dropdown summary:hover { background: var(--secondary); color: var(--white);}
 details.dropdown[open] > summary::before {
   display: block;
   position: fixed;
