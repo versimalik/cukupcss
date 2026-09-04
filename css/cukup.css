@@ -281,7 +281,6 @@ progress, meter { width: 100%; accent-color: var(--primary); margin-bottom: var(
 
 /* ---------- 06. KOMPONEN ----------
    Komponen ber-class untuk kebutuhan yang lebih spesifik. */
-
 /* navbar — satu <nav> berisi dua <ul> (brand kiri + menu kanan),
    sticky default, menu horizontal.
    Tidak membawa margin-bottom agar header tetap simetris. */
@@ -311,6 +310,18 @@ nav > ul:first-child a {
   font-weight: 700;
   text-decoration: none;
 }
+
+/* brand: logo + tulisan sejajar otomatis, tanpa perlu inline style */
+nav > ul:first-child li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+nav > ul:first-child img {
+  height: 30px;
+  display: block;
+}
+
 nav > ul li { flex: 0 0 auto; margin: 0; }
 nav > ul a { text-decoration: none; white-space: nowrap; }
 nav > ul a:hover { text-decoration: underline; }
