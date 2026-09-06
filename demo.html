@@ -23,7 +23,12 @@
 <header style="position: sticky; top: 0; background: var(--white); z-index: 100;">
   <nav aria-label="Navigasi utama" style="position: sticky; top: 0; z-index: 100; background-color: var(--white);">
     <ul>
-      <li><strong>CUKUP.CSS</strong></li>
+      <li>
+        <!-- <a href="/"> -->
+          <img id="logo-versimalik" style="height: 30px;" src="https://versimalik.com/assets/favicon/android-chrome-512x512.png" alt="Logo versimalik">
+          <strong>CUKUP.CSS</strong>
+        <!-- </a> -->
+      </li>
     </ul>
     
     <ul>
@@ -285,6 +290,19 @@
     <a href="#" class="btn btn-sm">Tautan btn-sm</a>
     <a href="#" class="btn btn-outline btn-lg">btn-outline btn-lg</a>
     <a href="#" role="button">Tautan role button</a>
+
+    <h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2);">Role group — tombol menempel</h4>
+    <div role="group">
+      <button type="button">Kiri</button>
+      <button type="button" class="btn-secondary">Tengah</button>
+      <button type="button" class="btn-outline">Kanan</button>
+    </div>
+
+    <h4>Role search — input + tombol</h4>
+    <div role="search">
+      <input type="search" placeholder="Cari...">
+      <button type="button">Cari</button>
+    </div>
   </section>
 
   <hr>
@@ -348,12 +366,12 @@
     <div class="tabs">
       <input type="radio" name="tab-demo" id="t1" checked>
       <label for="t1">Ringkas</label>
-      <div class="tab-konten">
+      <div class="tab-content">
         <p>Tampilan ringkas: satu paragraf utama saja.</p>
       </div>
       <input type="radio" name="tab-demo" id="t2">
       <label for="t2">Rinci</label>
-      <div class="tab-konten">
+      <div class="tab-content">
         <p>Tampilan rinci: paragraf tambahan dengan <a href="#">tautan lanjutan</a>.</p>
       </div>
     </div>

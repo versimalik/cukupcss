@@ -70,6 +70,7 @@ Jika butuh variasi, tambahkan class berikut pada kode HTML:
 | **Tab Menu** | `.tabs` | Menu tab interaktif yang bisa ditekan tanpa bantuan JavaScript. |
 | **Pesan (Alert)** | `.alert`, `.alert-secondary`, `.alert-outline` | Kotak peringatan atau informasi penting. |
 | **Menu Tarik (Dropdown)** | `details.dropdown` | Menu yang bisa dibuka/tutup tanpa JavaScript; daftar muncul di bawah tombol. Cocok ditaruh di dalam item navigasi. |
+| **Grup (Group)** | `[role="group"]`, `[role="search"]` | Membuat beberapa elemen form/tombol menempel menyatu tanpa celah antar-anggotanya. `[role="search"]` membuat input menggembang mengisi sisa ruang di samping tombol. |
 
 ### 3. Navigasi (Navbar)
 
