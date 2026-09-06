@@ -316,9 +316,6 @@ progress, meter { width: 100%; accent-color: var(--primary); margin-bottom: var(
    sticky default, menu horizontal.
    Tidak membawa margin-bottom agar header tetap simetris. */
 nav:has(> ul) {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
   align-items: center;
   background: var(--white);
