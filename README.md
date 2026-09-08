@@ -1,7 +1,5 @@
 # CUKUP.css
 
-**Versi:** 0.1
-
 > "Sederhana itu cukup. Dan itu sudah bagus."
 
 Cukup.css adalah kerangka kerja (*framework*) CSS yang mengutamakan kesederhanaan. Proyek ini menyediakan utilitas dasar dengan tema warna monokrom, sehingga Anda bisa fokus membangun tampilan yang rapi tanpa perlu repot memikirkan paduan warna.
@@ -19,7 +17,7 @@ Cukup.css adalah kerangka kerja (*framework*) CSS yang mengutamakan kesederhanaa
 Cukup sisipkan satu baris kode berikut ke bagian `<head>` pada file HTML Anda:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/versimalik/cukupcss@v0.1/css/cukup.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/versimalik/cukupcss@main/css/cukup.css">
 ```
 
 ## Prinsip Desain
